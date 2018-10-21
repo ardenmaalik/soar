@@ -16,7 +16,7 @@ html {
     grid-template-rows: auto;
     grid-template:
     [row1-start] "header header header header header header" 650px [row1-end]
-    [row2-start]"main main main main main main" 1000px [row2-end]
+    "main main main main main main";
 }
 
 #header-wrapper {
@@ -168,53 +168,12 @@ cursor: pointer;
     margin: 25px 30px 0 0;
 }
 /*Nav Cards */
-#nav-card-wrapper {
-    margin: 2% 0 0 10%;
+#nav-card-container {
+    background-color: yellow;
 }
-
-#nav-card-container{
-    display: flex;
-    width: 55%;
-    justify-content: space-between;
-}
-
 .nav-card {
-    display: flex;
-    background-color:#fff;
-    border-radius: 3%;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(197, 197, 197);
+    display: block;
+    background-color: white;
     height: 72px;
-    width: 32%;
-    text-decoration: none;
-}
-
-.nav-card h1 {
-    font-size: 14px;
-    margin: 14% 0 0 5%;
-    color: #000;
-}
-
-.nav-card img {
-    height:100%;
-}
-
-/*Featured Content*/
-#feature-wrapper {
-    margin: 5% 0 0 10%;
-}
-#feature-container {
-    width:86%;
-}
-#feature h2 {
-    font-size: 18px;
-}
-
-#feature img {
-    box-sizing: border-box;
-    width: 100%;
-    height: 300px;
-    border-radius: 1%;
-    object-fit: cover;
+    width: 140px;
 }
