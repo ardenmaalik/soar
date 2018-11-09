@@ -1,2 +1,2 @@
 # soar
-Travel site with Airbnb flair
+Travel site with AirBnB aesthetic
