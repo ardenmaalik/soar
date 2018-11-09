@@ -23,7 +23,7 @@ request.onload = function () {
             location.textContent = trip.location + ' ' + '.' + ' ' + trip.flight;
 
             const price = document.createElement('h2');
-            price.textContent = trip.price;
+            price.textContent = trip.price + ' ' + 'CAD' + ' ' + 'per person';
 
             const rating = document.createElement('h2');
             rating.textContent = trip.rating;
