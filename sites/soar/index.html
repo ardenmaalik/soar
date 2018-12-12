@@ -7,10 +7,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, intial-scale=1">
     <link rel="stylesheet" href="C:\development\sites\soar\css\stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+    <link rel="stylesheet" href="C:\development\sites\soar\awesomplete\awesomplete.css" />
+    <script src="C:\development\sites\soar\awesomplete\awesomplete.js" async></script>
 
 </head>
 
-<body class="home">
+<body class="home body">
     <div id="container">
         <div id="background-overlay"></div>
         <div id="header-wrapper">
@@ -28,28 +33,39 @@
                                 <nav id="main-nav">
                                     <ul>
                                         <li>Help</li>
-                                        <li class = 'nav-sign-up hidden'><a href = "#">Sign up</a></li>
-                                        <li>Log in</li>
+                                        <li class='nav-sign-up hidden'><a href="#">Sign up</a></li>
+                                        <li class='nav-login hidden'><a href='#'>Log in</a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div id='modal'>
-                                <div id='sign-up'>
-                                    <div>
-                                        <input id="email" name="email" placeholder="Email address">
-                                    </div>
-                                    <div>
-                                        <input id="fname" name="first-name" placeholder="First name">
-                                    </div>
-                                    <div>
-                                        <input id="lname" name="last-name" placeholder="Last name">
-                                    </div>
-                                    <div>
-                                        <input id="password" name="password" placeholder="Create a Password">
-                                    </div>
-                                    <div><button class = "submit">Sign me up!</button></div>
+                        <div id='sign-up-modal'>
+                            <div id='sign-up'>
+                                <div>
+                                    <input id="email" name="email" placeholder="Email address">
                                 </div>
+                                <div>
+                                    <input id="fname" name="first-name" placeholder="First name">
+                                </div>
+                                <div>
+                                    <input id="lname" name="last-name" placeholder="Last name">
+                                </div>
+                                <div>
+                                    <input id="password" name="password" placeholder="Create a Password">
+                                </div>
+                                <div><button class="submit">Sign me up!</button></div>
+                            </div>
+                        </div>
+                        <div id='login-modal'>
+                            <div id='login'>
+                                <div>
+                                    <input id="login_email" name="email" placeholder="Email address">
+                                </div>
+                                <div>
+                                    <input id="login_password" name="password" placeholder="Password">
+                                </div>
+                                <div><button class="submit">Log in!</button></div>
+                            </div>
                         </div>
                         <div id="form-wrapper">
                             <div id="form-container">
@@ -58,15 +74,18 @@
                                     <form>
                                         <div>
                                             <p>Where</p>
-                                            <input id="where" name="where" placeholder="Anywhere">
+                                            <input id="where" class="awesomplete" list="countries" name="country"
+                                                placeholder="Anywhere" autocomplete="nope">
                                         </div>
                                         <div id="date-title">
                                             <p id="checkin_title">Check-in</p>
                                             <p id="checkout_title">Check-out</p>
                                         </div>
                                         <div id="date">
-                                            <input type="text" id="checkin_input" name="checkin_input" placeholder="dd-mm-yyyy">
-                                            <input type="text" id="checkout_input" name="checkout_input" placeholder="dd-mm-yyyy">
+                                            <input type="text" class="start" id="1" name="checkin_input" placeholder="dd-mm-yyyy"
+                                                autocomplete="off">
+                                            <input type="text" class="end" id="1" name="checkout_input" placeholder="dd-mm-yyyy"
+                                                autocomplete="off">
                                         </div>
                                         <div>
                                             <p>Guests</p>
@@ -78,30 +97,36 @@
                                             <div id="guest-container">
                                                 <div class="guest-group">
                                                     <div class="group">Adults</div>
-                                                    <div class="group-buttons">
-                                                        <button class="subtract"></button>
-                                                        <div class="guest-count"></div>
-                                                        <button class="add"></button>
+                                                    <div class="group-buttons adults">
+                                                        <div id="ad-btn1" class="subtract"><img src='imgs/icons/subtract.png'
+                                                                class='responsive'></div>
+                                                        <span id=ad-counter class='guest-count'></span>
+                                                        <div id="ad-btn2" class="add"><img src='imgs/icons/add.png'
+                                                                class='responsive'></div>
                                                     </div>
                                                 </div>
                                                 <div class="guest-group">
                                                     <div class="group">Children</div>
-                                                    <div class="group-buttons, children">
-                                                        <button class="subtract"></button>
-                                                        <div class="guest-count"></div>
-                                                        <button class="add"></button>
+                                                    <div class="group-buttons children">
+                                                        <div id="ch-btn1" class="subtract"><img src='imgs/icons/subtract.png'
+                                                                class='responsive'></div>
+                                                        <span id=ch-counter class='guest-count'></span>
+                                                        <div id="ch-btn2" class="add"><img src='imgs/icons/add.png'
+                                                                class='responsive'></div>
                                                     </div>
                                                 </div>
                                                 <div class="guest-group">
                                                     <div class="group">Infants</div>
-                                                    <div class="group-buttons">
-                                                        <button class="subtract"></button>
-                                                        <div class="guest-count"></div>
-                                                        <button class="add"></button>
+                                                    <div class="group-buttons infants">
+                                                        <div id="in-btn1" class="subtract"><img src='imgs/icons/subtract.png'
+                                                                class='responsive'></div>
+                                                        <span id=in-counter class='guest-count'></span>
+                                                        <div id="in-btn2" class="add"><img src='imgs/icons/add.png'
+                                                                class='responsive'></div>
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <button id="submit" type="button">Search</button>
+                                                    <button id="submit" type="button">Close</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,8 +184,12 @@
         </div>
     </div>
     <script type="text/javascript" src="C:\development\sites\soar\js\trips.js"></script>
-    <script type="text/javascript" src="C:\development\sites\soar\js\guest.js"></script>
     <script type="text/javascript" src="C:\development\sites\soar\js\signup_modal.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/js-datepicker"></script>
+    <script type="text/javascript" src="C:\development\sites\soar\js\booking_form.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyApOp-TrUap96NjSPXiBQ0-YlxZjfYOUBU&libraries=places"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js"></script>
+
 </body>
 
 </html>

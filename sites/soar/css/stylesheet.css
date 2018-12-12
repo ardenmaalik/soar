@@ -9,6 +9,9 @@ html {
     height: 100%;
 }
 
+.awesomplete > ul {
+    background-color: blue;
+}
 #container {
     display: grid;
     margin: 0 auto;
@@ -68,7 +71,7 @@ header #background {
 
 #nav-container {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
 }
 #main-nav {
     display: flex;
@@ -85,6 +88,10 @@ header #background {
     padding: 0 20px 0 20px;
 }
 
+#main-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
 /*Form*/
 #form-wrapper {
     margin: 0 0 0 10%;
@@ -127,7 +134,7 @@ input {
 }
 
 #where /*Where input*/{
-    width: 88%;
+    width: 100%;
 }
 
 /*Form Guest Button*/
@@ -147,7 +154,7 @@ cursor: pointer;
 
 #guest-container {
     background-color: white;
-    height: 200px;
+    height: 250px;
     border-style: solid;
     border-width: 1px;
     border-color: rgb(214, 214, 214);
@@ -165,22 +172,46 @@ cursor: pointer;
 
 .group-buttons {
     display: flex;
-    width: 74%;
+    width: 100%;
     justify-content: flex-end;
 }
 
-.children {
-    display: flex;
-    width: 71%;
-    justify-content: flex-end;
+.adults {
+    width: 78%;
+}
 
+.children {
+    width: 74%;
+}
+
+.infants {
+    width: 77.8%;
 }
 
 #submit {
     display: block;
     float: right;
     margin: 25px 30px 0 0;
+    background: none;
+    color: rgb(1, 83, 88);
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
+
+/*Guest Wrap Buttons*/
+.add, .subtract {
+display: block;
+width: 32px;
+cursor: pointer;
+}
+
+.guest-count {
+    margin: 0 10px 0 10px;
+}
+
 /*Nav Cards */
 #nav-card-wrapper {
     margin: 0 auto;
@@ -278,7 +309,7 @@ height: 280px;
 }
 
 /*Sign Up Modal*/
-#modal {
+#sign-up-modal {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -313,3 +344,41 @@ height: 280px;
     border: none;
     border-radius: 3px;
 }
+
+/*Login Modal*/
+#login-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: none;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#login {
+    background-color: #fefefe;
+    margin:15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+#login input {
+    width: 100%;
+    margin-bottom:15px;
+}
+
+#login .submit {
+    width: 100%;
+    height: 48px;
+    background-color: rgb(253, 92, 74);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+}
+
