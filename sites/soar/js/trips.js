@@ -13,14 +13,18 @@ request.onload = function () {
             const cardImg = document.createElement('div');
             cardImg.setAttribute('class', 'card-img');
 
+            const link = document.createElement('a');
+            link.setAttribute('href', 'destination.html');
+
             const img = document.createElement('img');
             img.src = trip.image;
+            img.setAttribute('class', 'trip_img');
 
             const info = document.createElement('div');
             info.setAttribute('class', 'info');
 
-            const location = document.createElement('h1');
-            location.textContent = trip.location + ' ' + '.' + ' ' + trip.flight;
+            const destination = document.createElement('h1');
+            destination.textContent = trip.location + ' ' + '.' + ' ' + trip.flight;
 
             const price = document.createElement('h2');
             price.textContent = trip.price + ' ' + 'CAD' + ' ' + 'per person';
@@ -31,11 +35,13 @@ request.onload = function () {
             listing.appendChild(card);
             card.appendChild(cardImg);
             card.appendChild(info);
-            cardImg.appendChild(img);
-            info.appendChild(location);
+            cardImg.appendChild(link);
+            link.appendChild(img);
+            info.appendChild(destination);
             info.appendChild(price);
             info.appendChild(rating);
         });
+
     } else {
         const errorMessage = document.createElement('p');
         errorMessage.textContent = 'Something went wrong!';
@@ -43,3 +49,4 @@ request.onload = function () {
     }
 }
 request.send();
+

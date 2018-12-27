@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -5,188 +6,202 @@
     <meta http-equiv="X-UACompatible" content="IE=edge">
     <title>SOAR</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="C:\development\sites\soar\css\stylesheet.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
     <link rel="stylesheet" href="C:\development\sites\soar\awesomplete\awesomplete.css" />
     <script src="C:\development\sites\soar\awesomplete\awesomplete.js" async></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
 </head>
 
-<body class="home body">
-    <div id="container">
+<body class="body">
+    <div class="container">
         <div id="background-overlay"></div>
-        <div id="header-wrapper">
-            <div id="header-container">
-                <header>
-                    <div>
-                        <img id="background" class="responsive" src="C:\development\sites\soar\imgs\home\myanmar.jpg">
+        <div class="header-wrapper">
+            <div class="header-container">
+                <div>
+                    <img class="background responsive" src="C:\development\sites\soar\imgs\home\myanmar.jpg">
+                </div>
+                <div id="overlay">
+                    <div id="nav-wrapper">
+                        <div id="nav-container">
+                            <div id="logo_wrapper">
+                                <div id="logo_container">
+                                    <div id="logo">
+                                        <img src='imgs/icons/feather.svg' class='responsive'>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav id="main-nav">
+                                <ul>
+                                    <li>Help</li>
+                                    <li class='nav-sign-up hidden'><a href="#">Sign up</a></li>
+                                    <li class='nav-login hidden'><a href='#'>Log in</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                    <div id="overlay">
-                        <div id="logo">
-                            <img />
-                        </div>
-                        <div id="nav-wrapper">
-                            <div id="nav-container">
-                                <nav id="main-nav">
-                                    <ul>
-                                        <li>Help</li>
-                                        <li class='nav-sign-up hidden'><a href="#">Sign up</a></li>
-                                        <li class='nav-login hidden'><a href='#'>Log in</a></li>
-                                    </ul>
-                                </nav>
+                    <div id='nav-drop-down-wrapper'>
+                            <div id='nav-drop-down-container'>
+                                <ul id='nav-drop-down'>
+                                    <!--when width is 500-->
+                                    <a href = 'javascript:void(0)' id = 'closebtn'>&times;</a>
+                                    <li><a href='#'>Home</a></li>
+                                    <hr>
+                                    <li><a href='#'>Invite friends</a></li>
+                                    <li><a href='#'>SOAR for work</a></li>
+                                    <hr>
+                                    <li><a href='#'>Learn about planning a trip</a></li>
+                                    <li><a href='#'>Plan an experience</a></li>
+                                    <hr>
+                                    <li><a href='#'>Help</a></li>
+                                    <li><a href='#'>Sign up</a></li>
+                                    <li><a href='#'>Log in</a></li>
+                                </ul>
                             </div>
                         </div>
-                        <div id='sign-up-modal'>
-                            <div id='sign-up'>
-                                <div>
-                                    <input id="email" name="email" placeholder="Email address">
-                                </div>
-                                <div>
-                                    <input id="fname" name="first-name" placeholder="First name">
-                                </div>
-                                <div>
-                                    <input id="lname" name="last-name" placeholder="Last name">
-                                </div>
-                                <div>
-                                    <input id="password" name="password" placeholder="Create a Password">
-                                </div>
-                                <div><button class="submit">Sign me up!</button></div>
+                    <div id='sign-up-modal'>
+                        <div id='sign-up'>
+                            <div>
+                                <input id="email" name="email" placeholder="Email address">
                             </div>
-                        </div>
-                        <div id='login-modal'>
-                            <div id='login'>
-                                <div>
-                                    <input id="login_email" name="email" placeholder="Email address">
-                                </div>
-                                <div>
-                                    <input id="login_password" name="password" placeholder="Password">
-                                </div>
-                                <div><button class="submit">Log in!</button></div>
+                            <div>
+                                <input id="fname" name="first-name" placeholder="First name">
                             </div>
+                            <div>
+                                <input id="lname" name="last-name" placeholder="Last name">
+                            </div>
+                            <div>
+                                <input id="password" name="password" placeholder="Create a Password">
+                            </div>
+                            <div><button class="submit">Sign me up!</button></div>
                         </div>
-                        <div id="form-wrapper">
-                            <div id="form-container">
-                                <section id="booking">
-                                    <p class="title">Book your unique trip and experience.</p>
-                                    <form>
-                                        <div>
-                                            <p>Where</p>
-                                            <input id="where" class="awesomplete" list="countries" name="country"
-                                                placeholder="Anywhere" autocomplete="nope">
-                                        </div>
-                                        <div id="date-title">
-                                            <p id="checkin_title">Check-in</p>
-                                            <p id="checkout_title">Check-out</p>
-                                        </div>
-                                        <div id="date">
-                                            <input type="text" class="start" id="1" name="checkin_input" placeholder="dd-mm-yyyy"
-                                                autocomplete="off">
-                                            <input type="text" class="end" id="1" name="checkout_input" placeholder="dd-mm-yyyy"
-                                                autocomplete="off">
-                                        </div>
-                                        <div>
-                                            <p>Guests</p>
-                                            <button id="guest" name="guest" type="button">
-                                                <div class="guest-label"></div>
-                                            </button>
-                                        </div>
-                                        <div id="guest-wrapper">
-                                            <div id="guest-container">
-                                                <div class="guest-group">
-                                                    <div class="group">Adults</div>
-                                                    <div class="group-buttons adults">
-                                                        <div id="ad-btn1" class="subtract"><img src='imgs/icons/subtract.png'
-                                                                class='responsive'></div>
-                                                        <span id=ad-counter class='guest-count'></span>
-                                                        <div id="ad-btn2" class="add"><img src='imgs/icons/add.png'
-                                                                class='responsive'></div>
-                                                    </div>
-                                                </div>
-                                                <div class="guest-group">
-                                                    <div class="group">Children</div>
-                                                    <div class="group-buttons children">
-                                                        <div id="ch-btn1" class="subtract"><img src='imgs/icons/subtract.png'
-                                                                class='responsive'></div>
-                                                        <span id=ch-counter class='guest-count'></span>
-                                                        <div id="ch-btn2" class="add"><img src='imgs/icons/add.png'
-                                                                class='responsive'></div>
-                                                    </div>
-                                                </div>
-                                                <div class="guest-group">
-                                                    <div class="group">Infants</div>
-                                                    <div class="group-buttons infants">
-                                                        <div id="in-btn1" class="subtract"><img src='imgs/icons/subtract.png'
-                                                                class='responsive'></div>
-                                                        <span id=in-counter class='guest-count'></span>
-                                                        <div id="in-btn2" class="add"><img src='imgs/icons/add.png'
-                                                                class='responsive'></div>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <button id="submit" type="button">Close</button>
+                    </div>
+                    <div id='login-modal'>
+                        <div id='login'>
+                            <div>
+                                <input id="login_email" name="email" placeholder="Email address">
+                            </div>
+                            <div>
+                                <input id="login_password" name="password" placeholder="Password">
+                            </div>
+                            <div><button class="submit">Log in!</button></div>
+                        </div>
+                    </div>
+                    <div id="form-wrapper">
+                        <div id="form-container">
+                            <section id="booking">
+                                <p class="title">Book your unique trip and experience.</p>
+                                <form>
+                                    <div class='test'>
+                                        <p>Where</p>
+                                        <input id="where" class="awesomplete" list="countries" name="country"
+                                            placeholder="Anywhere" autocomplete="nope">
+                                    </div>
+                                    <div id="date-title">
+                                        <p id="checkin_title">Check-in</p>
+                                        <p id="checkout_title">Check-out</p>
+                                    </div>
+                                    <div id="date">
+                                        <input type="text" class="start" id="1" name="checkin_input" placeholder="dd-mm-yyyy"
+                                            autocomplete="off">
+                                        <input type="text" class="end" id="1" name="checkout_input" placeholder="dd-mm-yyyy"
+                                            autocomplete="off">
+                                    </div>
+                                    <div>
+                                        <p>Guests</p>
+                                        <button id="guest" name="guest" type="button">
+                                            <div class="guest-label"></div>
+                                        </button>
+                                    </div>
+                                    <div id="guest-wrapper">
+                                        <div id="guest-container">
+                                            <div class="guest-group">
+                                                <div class="group">Adults</div>
+                                                <div class="group-buttons adults">
+                                                    <div id="ad-btn1" class="subtract"><img src='imgs/icons/subtract.png'
+                                                            class='responsive'></div>
+                                                    <span id=ad-counter class='guest-count'></span>
+                                                    <div id="ad-btn2" class="add"><img src='imgs/icons/add.png' class='responsive'></div>
                                                 </div>
                                             </div>
+                                            <div class="guest-group">
+                                                <div class="group">Children</div>
+                                                <div class="group-buttons children">
+                                                    <div id="ch-btn1" class="subtract"><img src='imgs/icons/subtract.png'
+                                                            class='responsive'></div>
+                                                    <span id=ch-counter class='guest-count'></span>
+                                                    <div id="ch-btn2" class="add"><img src='imgs/icons/add.png' class='responsive'></div>
+                                                </div>
+                                            </div>
+                                            <div class="guest-group">
+                                                <div class="group">Infants</div>
+                                                <div class="group-buttons infants">
+                                                    <div id="in-btn1" class="subtract"><img src='imgs/icons/subtract.png'
+                                                            class='responsive'></div>
+                                                    <span id=in-counter class='guest-count'></span>
+                                                    <div id="in-btn2" class="add"><img src='imgs/icons/add.png' class='responsive'></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button id="close" type="button">Close</button>
+                                            </div>
                                         </div>
-                                    </form>
-                                </section>
-                            </div>
+                                    </div>
+                                    <div class="sub_flex_end"><button class="submit">Submit</button></div>
+                                </form>
+                            </section>
                         </div>
                     </div>
-                </header>
+                </div>
             </div>
         </div>
-        <div id="content-wrapper">
-            <div id="content-container">
-                <section id="content">
-                    <div id="nav-card-wrapper">
-                        <div>
-                            <h1>Explore SOAR</h1>
-                        </div>
-                        <div id="nav-card-container">
-                            <a href="http://ardenmaalik.com" class="nav-card homes">
-                                <img src="C:\development\sites\soar\imgs\home\home.jpg">
-                                <h1>Homes</h1>
-                            </a>
-                            <a href="http://ardenmaalik.com" class="nav-card experiences">
-                                <img src="C:\development\sites\soar\imgs\home\experiences.jpg">
-                                <h1>Experiences</h1>
-                            </a>
-                            <a href="http://ardenmaalik.com" class="nav-card restaurants">
-                                <img src="C:\development\sites\soar\imgs\home\restaurants.jpg">
-                                <h1>Restaurants</h1>
-                            </a>
-                        </div>
+        <div class="nav-card-wrapper">
+            <h1>Explore SOAR</h1>
+            <div class="nav-card-container">
+                <a href="http://ardenmaalik.com" class="nav-card homes">
+
+                    <img src="imgs/home/home.jpg">
+                    <h1>Homes</h1>
+                </a>
+                <a href="http://ardenmaalik.com" class="nav-card experiences">
+                    <img src="imgs/home/experiences.jpg">
+                    <h1>Experiences</h1>
+                </a>
+                <a href="http://ardenmaalik.com" class="nav-card restaurants">
+                    <img src="imgs/home/restaurants.jpg">
+                    <h1>Restaurants</h1>
+                </a>
+            </div>
+        </div>
+        <div class="feature-wrapper">
+            <div class="feature-container">
+                <div class="feature">
+                    <h1>Introducing SOAR plus</h1>
+                    <h2>A new selection of trips for quality and comfort</h2>
+                    <div class='soar_plus_text'>
+                        <h1>Most Wishlisted Trips in 2019</h1>
+                        <button class="explore_button" type="button">Explore Trips</button>
                     </div>
-                    <div id="feature-wrapper">
-                        <div id="feature-container">
-                            <div id="feature">
-                                <h1>Introducing SOAR plus</h1>
-                                <h2>A new selection of trips for quality and comfort</h2>
-                                <div>
-                                    <img src="C:\development\sites\soar\imgs\home\feature.jpg" class="responsive">
-                                </div>
-                            </div>
-                        </div>
+                    <div class='soar_img'>
+                        <img src="imgs/home/feature.jpg" class="responsive">
                     </div>
-                    <section id="world">
-                        <h1 class='world-title'>Destinations from Around the World</h1>
-                        <!--generated by Javascript-->
-                        <div id="listing-wrapper">
-                            <div id="listing-container">
-                            </div>
-                        </div>
-                    </section>
-                </section>
+                </div>
+            </div>
+        </div>
+        <div id="listing-wrapper">
+            <div id="listing-container">
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="C:\development\sites\soar\js\trips.js"></script>
-    <script type="text/javascript" src="C:\development\sites\soar\js\signup_modal.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/js-datepicker"></script>
-    <script type="text/javascript" src="C:\development\sites\soar\js\booking_form.js"></script>
+    <script src="C:\development\sites\soar\js\nav-dropdown.js"></script>
+    <script src="C:\development\sites\soar\js\trips.js"></script>
+    <script src="C:\development\sites\soar\js\signup_modal.js"></script>
+    <script src="https://unpkg.com/js-datepicker"></script>
+    <script src="C:\development\sites\soar\js\booking_form.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyApOp-TrUap96NjSPXiBQ0-YlxZjfYOUBU&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js"></script>
 

@@ -58,7 +58,7 @@ guestInput.onclick = function () {
 let guestCounter = document.querySelector('.guest-label')
 guestCounter.textContent = 0;
 
-/*  Adult guest counter*/
+//Adult guest counter
 let adultCounter = document.querySelector('#ad-counter');
 var adultBtn1 = document.querySelector("#ad-btn1");
 var adultBtn2 = document.querySelector('#ad-btn2');
@@ -94,7 +94,7 @@ chBtn1.onclick = function () {
 chBtn2.onclick = function () {
   childCounter.textContent++;
   guestCounter.textContent++;
-  };
+};
 
 /* Infant guest counter */
 let infantCounter = document.querySelector('#in-counter');
@@ -115,11 +115,10 @@ inBtn2.onclick = function () {
   guestCounter.textContent++;
 };
 
+/*Close Button*/
 
-    //Display result on guestInput..
-    //    function calc () {
-    // var total = adultCounter.textContent + childCounter.textContent;
+const close = document.querySelector('#close');
 
-    // guests = Number(document.getElementById('guests'))
-    //    }
-
+close.onclick = function() {
+  guestWrapper.style.display = 'none';
+}

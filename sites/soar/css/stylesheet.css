@@ -1,42 +1,47 @@
 /*Global*/
 body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
 }
 
 html {
+    width: 100%;
     height: 100%;
 }
 
-.awesomplete > ul {
-    background-color: blue;
-}
-#container {
+
+.container {
     display: grid;
     margin: 0 auto;
+    width: 100%;
+    transform-origin: 50% 50%;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
     grid-template:
-    [row1-start] "header header header header header header" 650px [row1-end]
-    [row2-start]"main main main main main main" 1000px [row2-end]
+    [row1-start] "header header header header header header" 700px [row1-end]
+    [row2-start]"nav-card nav-card nav-card nav-card nav-card nav-card" 200px [row2-end]
+    [row3-start]"feature feature feature feature feature feature" 500px [row3-end]
+    [row4-start]"listing listing listing listing listing listing" 800px [row4-end]
 }
 
-#background-overlay {
-    background-color: transparent;
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    display:block;
-}
-#header-wrapper {
+
+.header-wrapper {
     grid-area: header;
 }
 
-#content-wrapper {
-    grid-area: main;
+.nav-card-wrapper {
+    grid-area: nav-card;
+}
+
+.feature-wrapper {
+    grid-area: feature;
+}
+
+#listing-wrapper {
+    grid-area: listing;
 }
 
 .responsive {
@@ -44,21 +49,14 @@ html {
 }
 
 /*Header*/
-#header-wrapper {
+.header-wrapper, .header-container {
     width: 100%;
 }
 
-#header-container {
+.header-container .background {
     width: 100%;
-}
-
-#header {
-    width: 100%;
-}
-
-header #background {
-    position: relative;
-    height: 100%;
+    height:680px;
+    object-fit: cover;
 }
 
 #overlay {
@@ -67,19 +65,40 @@ header #background {
     width: 100%;
 }
 
-/*Header Nav*/
+/*Logo*/
 
+#logo_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+}
+
+#logo {
+    margin: 10px 0 0 20px;
+    width: 10%;
+}
+
+/*Header Nav*/
+#nav-wrapper  {
+    width:100%;
+    margin-right: 20px;
+}
 #nav-container {
     display: flex;
-    flex-flow: row nowrap;
+    width: 100%;
 }
+
 #main-nav {
     display: flex;
-    align-self: flex-end;
-    width: 25%;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    width: 70%;
 }
+
 #main-nav ul {
     color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 #main-nav ul li {
@@ -92,10 +111,15 @@ header #background {
     text-decoration: none;
     color: #fff;
 }
+
+#nav-drop-down-container {
+    display:none;
+}
+
 /*Form*/
 #form-wrapper {
     margin: 0 0 0 10%;
-    width: 32%;
+    width: 35%;
 }
 
 #form-container {
@@ -109,6 +133,7 @@ header #background {
 #booking {
     height: auto;
     margin: 0 0 0 8%;
+    font-family: 'Roboto', sans-serif;
 }
 
 #booking .title {
@@ -123,6 +148,23 @@ header #background {
     display: flex;
 }
 
+.sub_flex_end {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 12%;
+}
+
+#booking .submit {
+    width: 25%;
+    height: 48px;
+    margin: 25px 0 0 50px;
+    background-color: rgb(253, 92, 74);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+}
+
 #checkout_title {
     margin-left: 30%;
 }
@@ -134,11 +176,12 @@ input {
 }
 
 #where /*Where input*/{
-    width: 100%;
+    width: 300px;
 }
 
 /*Form Guest Button*/
 #guest /*Looks like an input field*/{
+position: relative;
 background-color: white;
 width: 88%;
 height: 40px;
@@ -147,8 +190,9 @@ cursor: pointer;
 }
 
 #guest-wrapper {
+    position: absolute;
     display: none;
-    width: 88%;
+    width: 26%;
     
 }
 
@@ -188,7 +232,7 @@ cursor: pointer;
     width: 77.8%;
 }
 
-#submit {
+#close {
     display: block;
     float: right;
     margin: 25px 30px 0 0;
@@ -213,31 +257,39 @@ cursor: pointer;
 }
 
 /*Nav Cards */
-#nav-card-wrapper {
-    margin: 0 auto;
-    width: 77%;
+.nav-card-wrapper {
+    width: 100%;
 }
 
-#nav-card-container{
+.nav-card-wrapper h1{
+    margin-left: 11%;
+}
+
+
+.nav-card-container{
     display: flex;
-    width: 77%;
+    width: 800px;
     justify-content: space-between;
+    margin-left:11%;
 }
 
 .nav-card {
     display: flex;
+    padding-right: 2%;
+    margin-right: 2%;
     background-color:#fff;
     border-radius: 3%;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(197, 197, 197);
     height: 72px;
-    width: 32%;
+    width: 262px;
     text-decoration: none;
 }
 
 .nav-card h1 {
     font-size: 18px;
+    font-weight: 700;
     margin: 12% 0 0 5%;
     color: #000;
 }
@@ -247,19 +299,31 @@ cursor: pointer;
 }
 
 /*Featured Content*/
-#feature-wrapper {
-    width: 77%;
-    margin: 5% auto;
+.feature-wrapper {
+    width: 100%;
 }
-#feature-container {
-    width:100%;
+
+.feature-container {
+    position: relative;
+    width:78%;
+    margin-left: 11%;
 }
-#feature h2 {
+
+.feature {
+    position: relative;
+}
+
+.feature h1 {
+    font-size: 24px;
+}
+
+.feature h2 {
     font-size: 18px;
+    font-weight: 300;
     margin-bottom: 25px;
 }
 
-#feature img {
+.feature img {
     box-sizing: border-box;
     width: 100%;
     height: 300px;
@@ -267,32 +331,54 @@ cursor: pointer;
     object-fit: cover;
 }
 
+.soar_img {
+    width: 100%;
+}
+
+.soar_plus_text {
+    position: absolute;
+    top: 50%;
+    left:5%;
+    width: 50%;
+    }
+
+.soar_plus_text h1 {
+    font-size: 32px;
+    width: 65%;
+    color: white;
+}
+
+
+.explore_button {
+    width:20%;
+    height: 35px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    border: 2px solid white;
+}
+
 /*SOAR listings*/
 
-#world {
-    margin: 0;
-}
-
-.world-title {
-font-size: 32px;
-margin-left: 12%;
-}
 
 #listing-wrapper {
-    margin: 0 auto;
-    width: 77%;
+    width:100%;
 }
 
 #listing-container {
-    width: 100%;
+    width: 1040px;
+    margin-left: 11%;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 
 .card {
 width: 246px;
 height: 280px;
+padding-left: 5px;
+padding-right: 5px;
 }
 
 .card-img img {
@@ -303,8 +389,14 @@ height: 280px;
     margin-bottom: 10px;
 }
 
-.card h1, h2 {
-    font-size:18px;
+.card h1 {
+    font-size:16px;
+    margin: 0;
+}
+
+.card h2 {
+    font-size: 14px;
+    font-weight: 300;
     margin: 0;
 }
 
@@ -382,3 +474,669 @@ height: 280px;
     border-radius: 3px;
 }
 
+@media only screen and (max-width: 1127px) {
+
+/*Global*/
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+
+.container {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-template:
+    [row1-start] "header header header header header header" 700px [row1-end]
+    [row2-start]"nav-card nav-card nav-card nav-card nav-card nav-card" 200px [row2-end]
+    [row3-start]"feature feature feature feature feature feature" 500px [row3-end]
+    [row4-start]"listing listing listing listing listing listing" 800px [row4-end]
+}
+
+#nav-drop-down-container {
+    display:none;
+}
+
+.header-wrapper {
+    grid-area: header;
+}
+
+.nav-card-wrapper {
+    grid-area: nav-card;
+}
+
+.feature-wrapper {
+    grid-area: feature;
+}
+
+#listing-wrapper {
+    grid-area: listing;
+}
+
+.responsive {
+    width: 100%;
+}
+
+/*Header*/
+.header-wrapper, .header-container {
+    width: 100%;
+}
+
+.header-container .background {
+    width: 100%;
+    height:260px;
+    object-fit: cover;
+}
+
+#overlay {
+    position: absolute;
+    top:0;
+    width: 100%;
+}
+
+ /*Form*/
+ #form-wrapper {
+    margin:10% 0 0 0;
+    width: 100%;
+    height: 500px;
+}
+
+#form-container {
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    height: 500px;
+    border-radius: 3%;
+}
+
+#booking {
+    width: 100%;
+    margin: 0 0 0 2%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#booking .title {
+    font-size: 28px;
+    font-weight: 700;
+    width: 50%;
+}
+
+#booking p {
+    font-size: 16px;
+}
+
+#booking #date-title /*checkin checkout*/ {
+    display: flex;
+}
+
+.sub_flex_end {
+    display: block;
+    justify-content: '';
+    margin-right: 0%;
+}
+
+#booking .submit {
+    width: 93%;
+    height: 48px;
+    margin: 25px 0 0 0;
+    background-color: rgb(253, 92, 74);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+}
+
+#checkout_title {
+    margin-left: 42%;
+}
+
+.start, .end {
+    width: 46.2%;
+}
+
+input {
+    height: 40px;
+    text-indent: 10px;
+    font-size: 14px;
+}
+
+#where /*Where input*/{
+    max-width: 95%;
+}
+
+
+/*Form Guest Button*/
+#guest /*Looks like an input field*/{
+    position: relative;
+    background-color: white;
+    width: 93%;
+    height: 40px;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+#guest-wrapper {
+    position: absolute;
+    display: none;
+    width: 1032px;    
+}
+
+#guest-container {
+    background-color: white;
+    height: 250px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(214, 214, 214);
+    border-radius: 2%;
+}
+
+.guest-group /*Adults, Children, Infants*/{
+    display:flex;
+    margin-top: 25px;
+}
+
+.group /*Group Titles*/{
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.group-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.adults {
+    width: 92%;
+}
+
+.children {
+    width: 90.8%;
+}
+
+.infants {
+    width: 91.8%;
+}
+
+#close {
+    display: block;
+    float: right;
+    margin: 25px 30px 0 0;
+    background: none;
+    color: rgb(1, 83, 88);
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/*Guest Wrap Buttons*/
+.add, .subtract {
+display: block;
+width: 32px;
+cursor: pointer;
+}
+
+.guest-count {
+    margin: 0 10px 0 10px;
+}
+
+
+/*Nav Cards */
+.nav-card-wrapper {
+    width: 100%;
+}
+
+.nav-card-wrapper h1{
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+
+.nav-card-container{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    margin-left:2%;
+}
+
+.nav-card {
+    display: flex;
+    padding-right: 2%;
+    background-color:#fff;
+    border-radius: 3%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(197, 197, 197);
+    height: 72px;
+    width: 30%;
+    text-decoration: none;
+}
+
+.nav-card h1 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 12% 0 0 5%;
+    color: #000;
+}
+
+.nav-card img {
+    height:100%;
+}
+
+/*Featured Content*/
+.feature-wrapper {
+    width: 100%;
+}
+
+.feature-container {
+    position: relative;
+    width:95%;
+    margin-left: 2%;
+}
+
+.feature {
+    position: relative;
+}
+
+.feature h1 {
+    font-size: 24px;
+}
+
+.feature h2 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.feature img {
+    box-sizing: border-box;
+    width: 100%;
+    height: 300px;
+    border-radius: 1%;
+    object-fit: cover;
+}
+
+.soar_img {
+    width: 100%;
+}
+
+.soar_plus_text {
+    position: absolute;
+    top: 50%;
+    left:5%;
+    width: 50%;
+    }
+
+.soar_plus_text h1 {
+    font-size: 32px;
+    width: 65%;
+    color: white;
+}
+
+
+.explore_button {
+    width:20%;
+    height: 35px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    border: 2px solid white;
+}
+
+/*SOAR listings*/
+
+
+#listing-wrapper {
+    width:100%;
+}
+
+#listing-container {
+    width: 95%;
+    margin-left: 2%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#listing-container div:nth-last-child(7), 
+#listing-container div:nth-last-child(8) {
+    display:none;
+}
+
+.card {
+    width: 30%;
+    height: 321px;
+    padding-left: 5px;
+    }
+    
+    .card-img img {
+        width: 100%;
+        height: 222px;
+        object-fit: cover;
+        border-radius: 2%;
+        margin-bottom: 10px;
+    }
+    
+    .card h1 {
+        font-size:16px;
+        margin: 0;
+    }
+    
+    .card h2 {
+        font-size: 14px;
+        font-weight: 300;
+        margin: 0;
+    }
+
+}
+
+@media only screen and (max-width: 969px) {
+
+    #nav-drop-down-container {
+        display:none;
+    }
+
+    
+    /*SOAR listings*/
+    
+    
+    #listing-wrapper {
+        width:100%;
+    }
+    
+    #listing-container {
+        width: 95%;
+        margin-left: 2%;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #listing-container div:nth-last-child(5), 
+    #listing-container div:nth-last-child(6),
+    #listing-container div:nth-last-child(7), 
+    #listing-container div:nth-last-child(8) {
+        display:none;
+    }
+    
+    .card {
+        display: inline-block;
+        width: 48%;
+        height: 100%;
+        padding-left: 5px;
+        }
+
+        .card-img img {
+            width: 100%;
+            background-size: 50% 50%;
+            border-radius: 2%;
+            margin-bottom: 10px;
+
+        }
+        
+        .card h1 {
+            font-size:16px;
+            margin: 0;
+        }
+        
+        .card h2 {
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0;
+        }
+    
+    }
+
+    @media only screen and (max-width: 743px) {
+    .container {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-template:
+    [row1-start] "header header header header header header" 700px [row1-end]
+    [row2-start]"nav-card nav-card nav-card nav-card nav-card nav-card" 250px [row2-end]
+    [row3-start]"feature feature feature feature feature feature" 500px [row3-end]
+    [row4-start]"listing listing listing listing listing listing" 700px [row4-end]
+}
+
+#nav-drop-down-container {
+    display:none;
+}
+
+/*Nav Cards */
+.nav-card-wrapper {
+    width: 100%;
+}
+
+.nav-card-wrapper h1{
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+
+.nav-card-container{
+    width: 460px;
+    margin-left:2%;
+}
+
+.nav-card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+    float:left;
+    margin-bottom: 4px;
+    margin-right: 10px;
+    padding: 0;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(197, 197, 197);
+    width: 140px;
+    height: 130px;
+    text-decoration: none;
+    overflow:hidden;
+}
+
+.nav-card h1 {
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+.nav-card img {
+   width: 100%;
+   height:77px;
+   object-fit: cover;
+}
+
+#listing-wrapper {
+    width:100%;
+}
+
+#listing-container {
+    width: 95%;
+    margin-left: 2%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    display: inline-block;
+    width: 48%;
+    height: 100%;
+    padding-left: 5px;
+    margin-bottom: 30px;
+    }
+
+    .card-img img {
+        width: 100%;
+        background-size: 50% 50%;
+        border-radius: 2%;
+        margin-bottom: 10px;
+
+    }
+    
+    .card h1 {
+        font-size:16px;
+        margin: 0;
+    }
+    
+    .card h2 {
+        font-size: 14px;
+        font-weight: 300;
+        margin: 0;
+    }
+
+}
+
+@media only screen and (max-width: 543px) {
+
+    .container {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-template:
+        [row1-start] "header header header header header header" 700px [row1-end]
+        [row2-start]"nav-card nav-card nav-card nav-card nav-card nav-card" 250px [row2-end]
+        [row3-start]"feature feature feature feature feature feature" 500px [row3-end]
+        [row4-start]"listing listing listing listing listing listing" 500px [row4-end]
+    }
+
+    /*Form*/
+
+    #booking .title {
+        width: 60%;
+    } 
+
+/*Logo*/
+
+#logo_wrapper {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    width: 30%;
+    cursor: pointer;
+}
+
+#logo {
+    margin: 10px 0 0 20px;
+    width: 40%;
+}
+
+/*Header Nav*/
+#nav-wrapper  {
+    width:100%;
+    margin-right: 20px;
+}
+#nav-container {
+    display: flex;
+    width: 100%;
+}
+
+#main-nav {
+    display: none;
+}
+
+#nav-drop-down-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#nav-drop-down-container {
+    display:none;
+    position: fixed;
+    width: 100%;
+    height: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+#nav-drop-down li, .closebtn {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.closebtn {
+    position: absolute;
+    top:0;
+    right: 25px;
+    font-size: 24px;
+}
+
+
+
+
+
+        #listing-wrapper {
+            position: relative;
+            width:100%;
+        }
+        
+        #listing-container {
+            position: absolute;
+            width: 95%;
+            margin-left: 2%;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #listing-container div:nth-last-child(5), 
+        #listing-container div:nth-last-child(6),
+        #listing-container div:nth-last-child(7), 
+        #listing-container div:nth-last-child(8) {
+            display:none;
+        }
+        
+        .card {
+            display: inline-block;
+            width: 47%;
+            height: 100%;
+            padding-left: 5px;
+            margin-bottom: 3%;
+            }
+    
+            .card-img img {
+                width: 100%;
+                height: 140px;
+                border-radius: 2%;
+                margin-bottom: 10px;
+    
+            }
+            
+            .card h1 {
+                font-size:16px;
+                margin: 0;
+            }
+            
+            .card h2 {
+                font-size: 14px;
+                font-weight: 300;
+                margin: 0;
+            }
+    }
