@@ -3,18 +3,32 @@
 <head>
     <link rel="stylesheet" href="C:\development\sites\soar\css\destination.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="C:\development\sites\soar\awesomplete\awesomplete.css" />
+    <script src="C:\development\sites\soar\awesomplete\awesomplete.js" async></script>
+
 </head>
 
 <body>
     <div id='container'>
         <header>
-            <div id="logo">
-                <img />
-            </div>
             <div id="nav-wrapper">
                 <div id="nav-container">
+                    <div id="logo_wrapper">
+                        <div id="logo_container">
+                            <div id="logo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                                    x="0px" y="0px" width="50px" height="50px" viewBox="0 0 791.997 791.997" style="enable-background:new 0 0 791.997 791.997;"
+                                    xml:space="preserve">
+                                    <path d="M325.8,700.343c3.061-0.31,4.452-31.517,32.88-31.145c-0.298,0.246,11.393-41.748,13.216-58.742    c1.847-17.054-10.65-45.575-10.863-46.871c1.969-3.017-15.587-20.642,41.893-106.729c63.574-90.318,71.383-102.162,72.659-116.308    c-21.396,29.088-63.804,57.148-63.593,57.104c0.165-0.056,40.316-45.434,88.608-100.853    c46.438-54.352,101.019-118.749,87.175-132.286c-20.07,37.424-64.657,62.943-64.541,62.987    c69.731-75.566,95.799-137.134,96.727-174.7c2.169-38.385-20.805-52.762-20.429-52.771c1.567-1.443-94.325,50.314-179.668,117.75    c-86.941,67.42-163.333,150.513-159.652,211.305c-9.552-4.659-34.107-0.576-34.141-0.5c0.765-0.84-25.203,28.493-40.694,71.393    c-16.103,43.357-21.72,100.282,5.602,165.244c-0.271,0.324,7.704,19.811,25.94,45.044c17.801,25.728,45.86,57.213,75.649,92.825    c0.08-0.084,8.056,12.875,10.623,14.784c2.783,1.694,9.512,17.156,9.427,17.232c-0.03,0.035,0.402,6.637,5.913,13.466    c3.766,11.56,7.122,23.509,10.063,35.84c0.056-0.054,8.529,9.075,9.907,7.373c1.474-1.799-3.156-23.16-7.874-39.679    c-0.267-7.838-5.398-25.98-5.485-25.892C325.166,726.197,323.097,700.743,325.8,700.343z M307.474,677.925    c-18.854-46.991-31.333-92.688-29.515-142.742c1.342-49.668,16.976-103.692,43.417-158.536    c25.965-54.463,62.736-109.741,95.446-153.121c32.233-42.995,60.404-74.088,58.246-71.37    c-31.4,55.739-108.081,148.802-147.566,237.439C284.48,481.091,278.656,568.166,307.474,677.925z"
+                                        fill="#000" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                     <nav id='search'>
-                        <div>
+                        <div class='test'>
                             <input id="where" class="awesomplete" list="countries" name="country" placeholder="Anywhere"
                                 autocomplete="nope">
                         </div>
@@ -95,6 +109,7 @@
             <section id='info_two'>
                 <div class='ratings'>
                     <div class='rate_img'><img></div>
+                    <hr>
                     <div class='rate_total'>
                         <div class='icon'>
                             <img src='imgs/icons/idea.png'>
@@ -103,44 +118,77 @@
                             <p>Just booked! Get your spot before it's too late.</p>
                         </div>
                     </div>
+                    <hr>
                 </div>
             </section>
             <section>
                 <div class='experiences'>
-                    <div class='what_to_know'>
-                        <h2>What to Know</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet libero molestiae
-                                cupiditate doloremque nesciunt error, officia ea natus, voluptas vero laborum
-                                asperiores! Sint laudantium magni impedit. Natus temporibus dolore fugiat accusantium,
-                                totam suscipit. Iure exercitationem repudiandae recusandae veniam blanditiis ad!
-                                Molestias ab fugiat magnam perferendis ut. Repellendus tempora recusandae pariatur.</p>
+                    <div class='what_to_know exp_margin'>
+                        <h2>What to Know</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet libero molestiae
+                            cupiditate doloremque nesciunt error, officia ea natus, voluptas vero laborum
+                            asperiores! Sint laudantium magni impedit. Natus temporibus dolore fugiat accusantium,
+                            totam suscipit. Iure exercitationem repudiandae recusandae veniam blanditiis ad!
+                            Molestias ab fugiat magnam perferendis ut. Repellendus tempora recusandae pariatur.</p>
                     </div>
-                    <div class='things_to_do'>
+                    <hr>
+                    <div class='things_to_do exp_margin'>
                         <h2>Things to Do</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, id!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet libero molestiae
+                            cupiditate doloremque nesciunt error, officia ea natus, voluptas vero laborum
+                            asperiores! Sint laudantium magni impedit. Natus temporibus dolore fugiat accusantium,
+                            totam suscipit.</p>
                     </div>
-                    <div class='what_to_bring'>
+                    <hr>
+                    <div class='what_to_bring exp_margin'>
                         <h2>What to Bring</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, a!</p>
+                        <p>Lorem, ipsum dolor</p>
+                        <p>sit amet</p>
+                        <p>consectetur adipisicing</p>
+                        <p>elit. Dolorem, a!</p>
                     </div>
                 </div>
             </section>
+            <hr>
             <section>
                 <div class='reviews'>
                     <div class='review_card'>
-                        <div class='user_img'><img></div>
-                        <div class='username'></div>
-                        <div class='review_date'></div>
+                        <div class="review_details">
+                            <div class='user_img'>
+                                <img src='imgs/user/Rachel.jpg' class='responsive'>
+                            </div>
+                            <div class='username'>Rachel</div>
+                            <div class='review_date'>2018-12-19</div>
+                        </div>
                         <div class='review_text'>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, consequuntur.</p>
                             <p>Accusamus placeat molestiae dolore autem alias culpa odit laborum assumenda!</p>
                             <p>Reprehenderit dolorem accusamus expedita sint nulla velit saepe enim molestias.</p>
                         </div>
                     </div>
+                    <hr>
+                    <div class='review_card'>
+                        <div class="review_details">
+                            <div class='user_img'>
+                                <img src='imgs/user/Adam.jpg' class='responsive'>
+                            </div>
+                            <div class='username'>Rachel</div>
+                            <div class='review_date'>2018-11-05</div>
+                        </div>
+                        <div class='review_text'>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, consequuntur.
+                                Accusamus placeat molestiae...</p>
+                        </div>
+                    </div>
+                    <hr>
                 </div>
             </section>
         </div>
     </div>
+    <script type="text/javascript" src="C:\development\sites\soar\js\signup_modal.js"></script>
+    <script type="text/javascript" src="C:\development\sites\soar\js\search_input.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyApOp-TrUap96NjSPXiBQ0-YlxZjfYOUBU&libraries=places"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js"></script>
 </body>
 
 </html>

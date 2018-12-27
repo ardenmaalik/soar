@@ -22,20 +22,27 @@ html {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
     grid-template:
-    [row1-start]'header header header header header header'100px [row1-end]
-    [row2-start]"side side main main main main" 1000px [row2-end]   
+    [row1-start]"header header header header header header" 80px [row1-end]
+    [row2-start]"side side main main main main" 1500px [row2-end]   
 }
 
 header {
     grid-area: header;
+    background-color: orange;
 }
 
 #content_wrapper {
     grid-area: main;
+    background-color: yellow;
 }
 
 #side {
     grid-area: side;
+    height: 500px;
+    background-color: blue;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 .responsive {
@@ -46,6 +53,10 @@ header {
 header {
     box-sizing: border-box;
     border-bottom: 1px solid  rgba(235,235,235,0.75);
+}
+
+#where {
+    min-width: 400px;
 }
 
 
@@ -72,16 +83,18 @@ header {
     display: inline-block;
     text-decoration: none;
     padding: 0 20px 0 20px;
+    font-size: 14px;
 }
 
 #search {
-    width: 35%;
+    width: 45%;
+    margin: 15px 0 0 0px;
 }
 
-#search input {
-    margin: 15px 0 0 80px;
+#where {
     width: 100%;
     height: 46px;
+    text-indent: 10px;
     border-radius: 5px;
     border: 0.8px solid;
     -webkit-box-shadow: 4px 9px 25px -8px rgba(235,235,235,0.75);
@@ -121,11 +134,18 @@ header {
     width: 75%;
 }
 
+.country_info p{
+    font-size: 18px;
+}
+
 .where, .travel_time, .language {
     display: flex;
+    height: 40px;
 }
+
 .icon{
     width: 3%;
+    height: 20px;
     margin: 20px 10px 0 0;
 }
 
@@ -142,8 +162,17 @@ header {
 }
 
 #info_two {
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
+
+.exp_margin {
+    margin: 30px 0 30px 0;
+}
+
+.experiences h2 {
+    font-size: 18px;
+}
+
 
 .rate_total {
     display: flex;
@@ -151,6 +180,23 @@ header {
 
 .rate_total p {
     padding-top: 8px;
+}
+
+/*Logo*/
+
+#logo_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 10%;
+}
+
+#logo_container {
+    margin: 10px 0 0 20px;
+}
+
+#logo svg {
+    width: 100%;
+    fill: #000 !important;
 }
 
 /*Sign Up Modal*/
@@ -177,6 +223,7 @@ header {
 
 #sign-up input {
     width: 100%;
+    height: 40px;
     margin-bottom:15px;
 }
 
@@ -214,6 +261,7 @@ header {
 
 #login input {
     width: 100%;
+    height: 40px;
     margin-bottom:15px;
 }
 
@@ -227,3 +275,29 @@ header {
     border-radius: 3px;
 }
 
+/*Reviews*/
+
+.review_card {
+    margin: 50px 0 50px 0;
+}
+
+.review_details {
+    display: flex;
+}
+
+.user_img {
+width: 5%;
+}
+
+.user_img img {
+    border-radius: 50%;
+}
+
+.username, .review_date {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.username {
+    font-weight: 700;
+}
