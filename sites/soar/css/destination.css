@@ -83,6 +83,10 @@ header {
     font-size: 14px;
 }
 
+#nav-drop-down-container {
+    display: none;
+}
+
 #search {
     width: 45%;
     margin: 15px 0 0 0px;
