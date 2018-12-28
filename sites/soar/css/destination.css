@@ -28,18 +28,15 @@ html {
 
 header {
     grid-area: header;
-    background-color: orange;
 }
 
 #content_wrapper {
     grid-area: main;
-    background-color: yellow;
 }
 
 #side {
     grid-area: side;
     height: 500px;
-    background-color: blue;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -300,4 +297,110 @@ width: 5%;
 
 .username {
     font-weight: 700;
+}
+
+@media screen and (max-width:743px) {
+    #container {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-template:
+        [row1-start]"header header header header header header" 80px [row1-end]
+        [row2-start]"side side side side side side"550px[row2-end]
+        [row3-start]"main main main main main main" 1500px [row3-end];  
+    }
+
+    #side {
+        grid-area: side;
+        height: 500px;
+        position: relative;
+        top: 0;
+        margin-left: 0;
+    }
+
+    #logo {
+        cursor: pointer;
+    }
+
+    #search {
+        width: 78%;
+        margin: 15px 0 0 0px;
+        overflow: hidden;
+    }
+
+    #main-nav {
+        display: none;
+    }
+
+    #nav-drop-down-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    #nav-drop-down hr {
+    
+        margin: 5% auto;
+        width: 90%;
+    }
+    
+    #nav-drop-down-container {
+        display:none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background-color: white;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+    }
+    
+    #nav-drop-down li, .closebtn {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    #nav-drop-down li a {
+        text-decoration: none;
+        color: #818181;
+    }
+    
+    .closebtn {
+        position: absolute;
+        top:0;
+        right: 25px;
+        font-size: 24px;
+    }
+
+    #where {
+        min-width: 350px;
+        height: 46px;
+        text-indent: 10px;
+        border-radius: 5px;
+        border: 0.8px solid;
+        -webkit-box-shadow: 4px 9px 25px -8px rgba(235,235,235,0.75);
+        -moz-box-shadow: 4px 9px 25px -8px  rgba(235,235,235,0.75);
+        box-shadow: 4px 9px 25px -8px  rgba(235,235,235,0.75);
+    }
+
+    #logo_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        width: 15%;
+    }
+    
+}
+
+@media screen and (max-width:412px) {
+    #where {
+        min-width: 300px;
+    }
+
 }

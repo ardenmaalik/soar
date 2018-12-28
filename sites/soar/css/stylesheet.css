@@ -24,7 +24,7 @@ html {
     [row1-start] "header header header header header header" 700px [row1-end]
     [row2-start]"nav-card nav-card nav-card nav-card nav-card nav-card" 200px [row2-end]
     [row3-start]"feature feature feature feature feature feature" 500px [row3-end]
-    [row4-start]"listing listing listing listing listing listing" 800px [row4-end]
+    [row4-start]"listing listing listing listing listing listing" 700px [row4-end]
 }
 
 
@@ -133,11 +133,13 @@ html {
 #booking {
     height: auto;
     margin: 0 0 0 8%;
+    width: 100%;
     font-family: 'Roboto', sans-serif;
 }
 
 #booking .title {
     font-size: 32px;
+    width: 100%;
 }
 
 #booking p {
@@ -365,6 +367,11 @@ cursor: pointer;
     width:100%;
 }
 
+#listing-wrapper .title {
+    margin-left: 11%;
+    font-size: 24px;
+}
+
 #listing-container {
     width: 1040px;
     margin-left: 11%;
@@ -560,7 +567,7 @@ html {
 }
 
 #booking {
-    width: 100%;
+    width: 95%;
     margin: 0 0 0 2%;
     font-family: 'Roboto', sans-serif;
 }
@@ -704,7 +711,6 @@ cursor: pointer;
     font-size: 24px;
 }
 
-
 .nav-card-container{
     display: flex;
     width: 95%;
@@ -801,6 +807,12 @@ cursor: pointer;
 
 #listing-wrapper {
     width:100%;
+}
+
+
+#listing-wrapper .title {
+    margin-left: 2%;
+    font-size: 24px;
 }
 
 #listing-container {
@@ -964,6 +976,8 @@ cursor: pointer;
    object-fit: cover;
 }
 
+/*Listings*/
+
 #listing-wrapper {
     width:100%;
 }
@@ -1059,11 +1073,17 @@ cursor: pointer;
     width: 100%;
 }
 
+#nav-drop-down hr {
+
+    margin: 5% auto;
+    width: 90%;
+}
+
 #nav-drop-down-container {
     display:none;
     position: fixed;
     width: 100%;
-    height: 0;
+    height: 100%;
     top: 0;
     right: 0;
     z-index: 1;
@@ -1080,6 +1100,11 @@ cursor: pointer;
     color: #818181;
     display: block;
     transition: 0.3s;
+}
+
+#nav-drop-down li a {
+    text-decoration: none;
+    color: #818181;
 }
 
 .closebtn {
@@ -1139,4 +1164,106 @@ cursor: pointer;
                 font-weight: 300;
                 margin: 0;
             }
+    }
+
+    @media screen and (max-device-width: 412px) {
+
+        .container {
+            display: grid;
+            margin: 0 auto;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: auto;
+            grid-template:
+            [row1-start] "header header header header header header" 600px [row1-end]
+            [row2-start]"nav-card nav-card nav-card nav-card nav-card nav-card" 200px [row2-end]
+            [row3-start]"feature feature feature feature feature feature" 450px [row3-end]
+            [row4-start]"listing listing listing listing listing listing" 500px [row4-end]
+        }
+
+/*Form*/
+
+#overlay {
+    width: 100%;
+}
+
+        #form-wrapper {
+            margin:10% 0 0 0;
+            width: 100%;
+            height: 500px;
+        }
+        
+        #form-container {
+            display: inline-block;
+            background-color: white;
+            width: 100%;
+            height: 500px;
+            border-radius: 3%;
+        }
+        
+        #booking {
+            width: 98%;
+            margin: 0 0 0 2%;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #booking .title {
+            font-size: 28px;
+            font-weight: 700;
+            width: 80%;
+        }
+
+/*Nav Cards */
+.nav-card-wrapper {
+    width: 100%;
+}
+
+.nav-card-wrapper h1{
+    margin-left: 2%;
+    font-size: 14px;
+}
+
+
+.nav-card-container{
+    width: 98%;
+    margin-left:2%;
+}
+
+.nav-card {
+    width: 120px;
+    height: 110px;
+    
+}
+
+.nav-card h1 {
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+/*Feature*/
+.soar_plus_text {
+    position: absolute;
+    top: 50%;
+    left:5%;
+    width: 60%;
+    }
+
+.soar_plus_text h1 {
+    font-size: 32px;
+    width: 100%;
+    color: white;
+}
+
+
+.explore_button {
+    width:45%;
+    height: 35px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    border: 2px solid white;
+}
+
+}
     }
